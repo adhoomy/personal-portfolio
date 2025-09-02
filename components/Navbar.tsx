@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof window === 'undefined') return 'light';
     const stored = window.localStorage.getItem('theme');
@@ -18,6 +19,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -99,8 +101,14 @@ export default function Navbar() {
               className="ml-4 rounded-md border border-gray-200 px-3 py-1 text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
-              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-              <span className="hidden sm:inline">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+              {!mounted ? (
+                <Sun size={16} className="opacity-0" />
+              ) : theme === 'dark' ? (
+                <Sun size={16} />
+              ) : (
+                <Moon size={16} />
+              )}
+              <span className="hidden sm:inline">{mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Dark'}</span>
             </button>
           </div>
 
@@ -139,8 +147,14 @@ export default function Navbar() {
                 className="mt-2 w-max rounded-md border border-gray-200 px-3 py-1 text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
-                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                <span>{theme === 'dark' ? 'Light' : 'Dark'} Mode</span>
+                {!mounted ? (
+                  <Sun size={16} className="opacity-0" />
+                ) : theme === 'dark' ? (
+                  <Sun size={16} />
+                ) : (
+                  <Moon size={16} />
+                )}
+                <span>{mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Dark'} Mode</span>
               </button>
             </div>
           </div>
