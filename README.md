@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio
+
+A clean, minimalist personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Modern Design**: Notion-inspired clean aesthetic with Inter font
+- **Responsive Layout**: Mobile-first design with hamburger menu
+- **Sticky Navigation**: Navbar with scroll effects and smooth transitions
+- **Component Architecture**: Reusable Layout component with Navbar and Footer
+- **TypeScript**: Full type safety throughout the application
+- **Tailwind CSS**: Utility-first styling with custom color scheme
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Lucide React (Icons)
+- Google Fonts (Inter)
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+personal-portfolio/
+├── app/
+│   ├── about/page.tsx
+│   ├── contact/page.tsx
+│   ├── projects/page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Layout.tsx
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+└── ...
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Colors**: White background (#ffffff), black text (#0D0D0D), gray secondary (#555555)
+- **Typography**: Inter font family
+- **Spacing**: Generous padding and margins for clean whitespace
+- **Interactions**: Smooth transitions and hover effects
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next Steps
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add hero section to home page
+- Implement project showcase
+- Add about page content
+- Create contact form
+- Add animations and micro-interactions
