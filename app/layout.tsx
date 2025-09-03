@@ -33,8 +33,8 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <div className="min-h-screen flex flex-col bg-background text-foreground">
           <Navbar />
-          <main className="flex-1 pt-20">
-            <div className="max-w-6xl mx-auto px-6 py-12">{children}</div>
+          <main className="flex-1">
+            <div className="max-w-6xl mx-auto px-6">{children}</div>
           </main>
           <Footer />
         </div>
