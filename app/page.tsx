@@ -7,25 +7,30 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center max-w-4xl mx-auto px-6">
         {/* Hero Text with Animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-12"
-        >
-          <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-6">
+        <div className="mb-12">
+          <motion.h1
+            className="text-2xl md:text-4xl font-bold text-foreground mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             Adham Mustafa – Software Engineer
-          </h1>
-          <p className="text-lg md:text-xl text-[#555555] dark:text-gray-300 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl text-[#555555] dark:text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          >
             I design and build modern web applications with clean, scalable code.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           {/* Resume Button */}

@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light dark" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <div className="min-h-screen flex flex-col bg-background text-foreground">
           <Navbar />
           <main className="flex-1">
