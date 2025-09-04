@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <div className="min-h-screen flex flex-col bg-background text-foreground">
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pt-16 md:pt-20">
             <div className="max-w-6xl mx-auto px-6">{children}</div>
           </main>
           <Footer />
