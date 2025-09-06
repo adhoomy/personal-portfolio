@@ -1,0 +1,25 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg-light { fill: #f3f4f6; }
+      .bg-dark { fill: #1f2937; }
+      .rect-light { fill: #e5e7eb; }
+      .rect-dark { fill: #374151; }
+      .text-light { fill: #6b7280; }
+      .text-dark { fill: #d1d5db; }
+      .subtext-light { fill: #9ca3af; }
+      .subtext-dark { fill: #9ca3af; }
+      
+      @media (prefers-color-scheme: dark) {
+        .bg-light { fill: #1f2937; }
+        .rect-light { fill: #374151; }
+        .text-light { fill: #d1d5db; }
+        .subtext-light { fill: #9ca3af; }
+      }
+    </style>
+  </defs>
+  <rect width="400" height="300" class="bg-light"/>
+  <rect x="50" y="50" width="300" height="200" class="rect-light" rx="8"/>
+  <text x="200" y="140" text-anchor="middle" class="text-light" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500">Project Image</text>
+  <text x="200" y="165" text-anchor="middle" class="subtext-light" font-family="system-ui, -apple-system, sans-serif" font-size="12">Coming Soon</text>
+</svg>

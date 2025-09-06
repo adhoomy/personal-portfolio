@@ -7,6 +7,42 @@ import { projects as allProjects } from "@/data/projects";
 export default function Home() {
   const featured = allProjects.filter((p) => p.featured);
 
+  const getTechColor = (tech: string) => {
+    const techLower = tech.toLowerCase();
+    
+    // Frontend frameworks
+    if (techLower.includes('react') || techLower.includes('next')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
+    if (techLower.includes('vue') || techLower.includes('angular')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+    if (techLower.includes('svelte')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
+    
+    // Backend/APIs
+    if (techLower.includes('node') || techLower.includes('express')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+    if (techLower.includes('python') || techLower.includes('django') || techLower.includes('flask')) return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300';
+    if (techLower.includes('php') || techLower.includes('laravel')) return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
+    if (techLower.includes('java') || techLower.includes('spring')) return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300';
+    
+    // Databases
+    if (techLower.includes('postgres') || techLower.includes('postgresql')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
+    if (techLower.includes('mysql')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
+    if (techLower.includes('mongodb')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+    if (techLower.includes('redis')) return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300';
+    
+    // AI/ML
+    if (techLower.includes('openai') || techLower.includes('ai') || techLower.includes('ml')) return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
+    if (techLower.includes('tensorflow') || techLower.includes('pytorch')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
+    
+    // Cloud/DevOps
+    if (techLower.includes('aws') || techLower.includes('vercel') || techLower.includes('netlify')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
+    if (techLower.includes('docker') || techLower.includes('kubernetes')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
+    
+    // Styling
+    if (techLower.includes('tailwind') || techLower.includes('css')) return 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300';
+    if (techLower.includes('sass') || techLower.includes('scss')) return 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300';
+    
+    // Default
+    return 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300';
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -69,7 +105,7 @@ export default function Home() {
               href="https://github.com/adham-mustafa"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-gray-800 dark:bg-gray-700 text-white font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:bg-gray-900 dark:hover:bg-gray-600 active:scale-95"
+              className="px-6 py-3 rounded-xl bg-orange-600 text-white font-medium transition-all duration-200 hover:scale-105 hover:shadow-lg hover:bg-orange-700 active:scale-95"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -110,7 +146,7 @@ export default function Home() {
                 key={proj.id}
                 variants={cardVariants}
                 whileHover={{ scale: 1.03 }}
-                className="rounded-2xl overflow-hidden bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800 shadow-sm hover:shadow-lg transition-shadow"
+                className="rounded-xl overflow-hidden bg-white dark:bg-neutral-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-0"
               >
                 <div className="relative w-full h-44">
                   <Image
@@ -122,15 +158,15 @@ export default function Home() {
                     priority={false}
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-lg text-foreground mb-2">{proj.title}</h3>
-                  <p className="text-sm text-secondary line-clamp-2 mb-4">{proj.description}</p>
+                <div className="p-6">
+                  <h3 className="font-semibold text-xl text-gray-900 dark:text-white mb-3">{proj.title}</h3>
+                  <p className="text-sm text-[#555555] dark:text-gray-300 line-clamp-2 mb-4 leading-relaxed">{proj.description}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-5">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {proj.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs px-2.5 py-1 rounded-full bg-neutral-200/70 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                            className={`text-xs px-2.5 py-1 rounded-full ${getTechColor(t)}`}
                       >
                         {t}
                       </span>
@@ -142,7 +178,7 @@ export default function Home() {
                       href={proj.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-gray-800 dark:bg-gray-700 text-white text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-gray-900 dark:hover:bg-gray-600 active:scale-95"
+                          className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-orange-700 active:scale-95"
                     >
                       GitHub
                     </a>

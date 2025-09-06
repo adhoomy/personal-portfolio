@@ -7,7 +7,7 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "WebSocket", "Prisma"],
     github: "https://github.com/adham-mustafa/realtime-chat",
     demo: "https://example.com/chat",
-    image: "/images/placeholder.png",
+    image: "/images/placeholder.svg",
     featured: true,
   },
   {
@@ -18,7 +18,7 @@ export const projects = [
     tech: ["Next.js", "OpenAI", "Pinecone", "Tailwind"],
     github: "https://github.com/adham-mustafa/ai-docs",
     demo: "https://example.com/ai-docs",
-    image: "/images/placeholder.png",
+    image: "/images/placeholder.svg",
     featured: true,
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     tech: ["Next.js", "tRPC", "Postgres", "Tailwind"],
     github: "https://github.com/adham-mustafa/finance-dashboard",
     demo: "https://example.com/finance",
-    image: "/images/placeholder.png",
+    image: "/images/placeholder.svg",
     featured: true,
   },
   {
@@ -40,7 +40,7 @@ export const projects = [
     tech: ["Next.js", "Edge Runtime", "KV"],
     github: "https://github.com/adham-mustafa/tinyurl",
     demo: "https://example.com/tiny",
-    image: "/images/placeholder.png",
+    image: "/images/placeholder.svg",
     featured: false,
   },
 ];
