@@ -1,0 +1,16 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #f3f4f6; }
+      [data-theme="dark"] .bg { fill: #1f2937; }
+      .avatar { fill: #d1d5db; }
+      [data-theme="dark"] .avatar { fill: #4b5563; }
+      .text { fill: #9ca3af; }
+      [data-theme="dark"] .text { fill: #6b7280; }
+    </style>
+  </defs>
+  <rect width="400" height="400" class="bg"/>
+  <circle cx="200" cy="160" r="60" class="avatar"/>
+  <path d="M120 280c0-44.18 35.82-80 80-80s80 35.82 80 80v40H120v-40z" class="avatar"/>
+  <text x="200" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" class="text">Profile Image</text>
+</svg>
