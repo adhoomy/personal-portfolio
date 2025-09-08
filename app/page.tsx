@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center justify-center">
+      <section id="hero" className="min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center justify-center scroll-mt-24">
         <div className="text-center max-w-4xl mx-auto px-6">
           <div className="mb-12">
             <motion.h1
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* EXPERIENCE SECTION */}
-      <section className="pt-12 pb-20">
+      <section id="experience" className="py-20 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -283,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED PROJECTS SECTION */}
-      <section className="py-20">
+      <section id="featured" className="py-20 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -365,7 +365,7 @@ export default function Home() {
       </section>
 
       {/* SKILLS SECTION */}
-      <section className="py-20">
+      <section id="skills" className="py-20 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -431,6 +431,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

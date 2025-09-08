@@ -29,6 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="color-scheme" content="light dark" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Adham Mustafa – Software Engineer</title>
+        <meta name="description" content="Portfolio of Adham Mustafa, showcasing software engineering projects, skills, and experience." />
       </head>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <div className="min-h-screen flex flex-col bg-background text-foreground">

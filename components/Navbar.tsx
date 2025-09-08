@@ -79,11 +79,20 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  scroll={false}
                   className={`relative transition-colors group ${
                     isActive
                       ? 'text-blue-600'
                       : 'text-foreground hover:text-blue-600'
                   }`}
+                  onClick={(e) => {
+                    const url = new URL(link.href, window.location.origin);
+                    if (url.pathname === window.location.pathname && url.hash) {
+                      e.preventDefault();
+                      const el = document.querySelector(url.hash);
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
                 >
                   {link.label}
                   <span
@@ -131,12 +140,21 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    scroll={false}
                     className={`py-2 transition-colors ${
                       isActive
                         ? 'text-blue-600'
                         : 'text-foreground hover:text-blue-600'
                     }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      setIsMobileMenuOpen(false);
+                      const url = new URL(link.href, window.location.origin);
+                      if (url.pathname === window.location.pathname && url.hash) {
+                        e.preventDefault();
+                        const el = document.querySelector(url.hash);
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                   >
                     {link.label}
                   </Link>

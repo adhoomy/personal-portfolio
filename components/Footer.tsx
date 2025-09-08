@@ -30,6 +30,13 @@ export default function Footer() {
             >
               <Linkedin size={20} />
             </a>
+            <a
+              href="mailto:adham@example.com"
+              className="text-secondary hover:text-blue-600 hover:scale-110 transition-all duration-200"
+              aria-label="Email"
+            >
+              <span className="text-sm font-medium">Email</span>
+            </a>
           </div>
         </div>
       </div>
