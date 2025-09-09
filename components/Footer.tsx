@@ -1,8 +1,8 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-gray-100 py-8">
+    <footer className="bg-background border-t border-black py-8 hard-shadow-sm">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Copyright */}
@@ -16,26 +16,29 @@ export default function Footer() {
               href="https://github.com/adham-mustafa"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:text-blue-600 hover:scale-110 transition-all duration-200"
+              className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={16} />
+              <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
               href="https://linkedin.com/in/adham-mustafa"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:text-blue-600 hover:scale-110 transition-all duration-200"
+              className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={16} />
+              <span className="hidden sm:inline">LinkedIn</span>
             </a>
             <a
               href="mailto:adham@example.com"
-              className="text-secondary hover:text-blue-600 hover:scale-110 transition-all duration-200"
+              className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
               aria-label="Email"
             >
-              <span className="text-sm font-medium">Email</span>
+              <Mail size={16} />
+              <span className="hidden sm:inline">Email</span>
             </a>
           </div>
         </div>

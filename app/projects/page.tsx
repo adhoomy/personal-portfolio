@@ -11,39 +11,7 @@ export default function Projects() {
   const filterCategories = ["All", "Web", "Backend", "AI"];
 
   const getTechColor = (tech: string) => {
-    const techLower = tech.toLowerCase();
-    
-    // Frontend frameworks
-    if (techLower.includes('react') || techLower.includes('next')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
-    if (techLower.includes('vue') || techLower.includes('angular')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
-    if (techLower.includes('svelte')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    
-    // Backend/APIs
-    if (techLower.includes('node') || techLower.includes('express')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
-    if (techLower.includes('python') || techLower.includes('django') || techLower.includes('flask')) return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300';
-    if (techLower.includes('php') || techLower.includes('laravel')) return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
-    if (techLower.includes('java') || techLower.includes('spring')) return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300';
-    
-    // Databases
-    if (techLower.includes('postgres') || techLower.includes('postgresql')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
-    if (techLower.includes('mysql')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    if (techLower.includes('mongodb')) return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
-    if (techLower.includes('redis')) return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300';
-    
-    // AI/ML
-    if (techLower.includes('openai') || techLower.includes('ai') || techLower.includes('ml')) return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
-    if (techLower.includes('tensorflow') || techLower.includes('pytorch')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    
-    // Cloud/DevOps
-    if (techLower.includes('aws') || techLower.includes('vercel') || techLower.includes('netlify')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    if (techLower.includes('docker') || techLower.includes('kubernetes')) return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
-    
-    // Styling
-    if (techLower.includes('tailwind') || techLower.includes('css')) return 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300';
-    if (techLower.includes('sass') || techLower.includes('scss')) return 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300';
-    
-    // Default
-    return 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300';
+    return 'px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200';
   };
 
   const filteredProjects = projects.filter((project) => {
@@ -62,48 +30,59 @@ export default function Projects() {
   } as const;
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+    hidden: { opacity: 0, x: -20, y: 20 },
+    show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   } as const;
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       {/* Header */}
-      <div className="text-center mb-12">
+      <motion.div
+        initial={{ opacity: 0, x: -20, y: 20 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-center mb-12"
+      >
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           All Projects
         </h1>
         <p className="text-lg text-secondary max-w-2xl mx-auto">
           A complete collection of my software engineering work
         </p>
-      </div>
+      </motion.div>
 
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        className="flex flex-wrap justify-center gap-3 mb-12"
+      >
         {filterCategories.map((category) => {
           const getFilterColor = (cat: string) => {
-            if (activeFilter !== cat) return "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600";
+            if (activeFilter !== cat) return "text-foreground hover:bg-royal-blue hover:text-white";
             
             switch (cat) {
-              case "All": return "bg-gray-600 text-white shadow-lg";
-              case "Web": return "bg-blue-600 text-white shadow-lg";
-              case "Backend": return "bg-green-600 text-white shadow-lg";
-              case "AI": return "bg-purple-600 text-white shadow-lg";
-              default: return "bg-[#1034A6] text-white shadow-lg";
+              case "All": return "bg-royal-blue text-white";
+              case "Web": return "bg-royal-blue text-white";
+              case "Backend": return "bg-royal-blue text-white";
+              case "AI": return "bg-royal-blue text-white";
+              default: return "bg-royal-blue text-white";
             }
           };
 
           return (
-            <button
+            <motion.button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 ${getFilterColor(category)}`}
+              className={`rounded-md border border-black px-3 py-1 text-sm font-medium transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm ${getFilterColor(category)}`}
+              whileTap={{ scale: 0.95 }}
             >
               {category}
-            </button>
+            </motion.button>
           );
         })}
-      </div>
+      </motion.div>
 
       {/* Projects Grid */}
       <motion.div
@@ -116,8 +95,7 @@ export default function Projects() {
           <motion.article
             key={project.id}
             variants={cardVariants}
-            whileHover={{ scale: 1.02 }}
-            className="rounded-xl overflow-hidden bg-white dark:bg-neutral-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-0"
+            className="rounded-xl overflow-hidden bg-background border border-black hard-shadow-sm diagonal-hover hover:hard-shadow transition-all duration-200"
           >
             <div className="relative w-full h-48">
               <Image
@@ -130,10 +108,10 @@ export default function Projects() {
               />
             </div>
             <div className="p-6">
-              <h3 className="font-semibold text-xl text-gray-900 dark:text-white mb-3">
+              <h3 className="font-semibold text-xl text-foreground mb-3">
                 {project.title}
               </h3>
-              <p className="text-sm text-[#555555] dark:text-gray-300 mb-4 line-clamp-3 leading-relaxed">
+              <p className="text-sm text-secondary mb-4 line-clamp-3 leading-relaxed">
                 {project.description}
               </p>
 
@@ -141,7 +119,7 @@ export default function Projects() {
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
-                    className={`text-xs px-3 py-1 rounded-full ${getTechColor(tech)}`}
+                    className={`text-xs px-3 py-1 rounded-full ${getTechColor(tech)} hover:bg-royal-blue hover:text-white transition-colors duration-200`}
                   >
                     {tech}
                   </span>
@@ -153,8 +131,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-orange-700"
-                  whileHover={{ scale: 1.05 }}
+                  className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-700 border border-black"
                   whileTap={{ scale: 0.95 }}
                 >
                   GitHub
@@ -163,8 +140,7 @@ export default function Projects() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-[#1034A6] text-white text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-[#0d2a85]"
-                  whileHover={{ scale: 1.05 }}
+                  className="px-4 py-2 rounded-xl bg-royal-blue text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-dark border border-black"
                   whileTap={{ scale: 0.95 }}
                 >
                   Live Demo
@@ -176,11 +152,15 @@ export default function Projects() {
       </motion.div>
 
       {filteredProjects.length === 0 && (
-        <div className="text-center py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center py-12"
+        >
           <p className="text-lg text-secondary">
             No projects found for the selected filter.
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );

@@ -1,42 +1,60 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Contact() {
   return (
     <section className="py-20">
       <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-12 space-y-3">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">Let’s Connect</h1>
+        <motion.div
+          initial={{ opacity: 0, x: -20, y: 20 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-12 space-y-3"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">Let's Connect</h1>
           <p className="text-lg text-secondary">Feel free to reach out via email or socials.</p>
-        </div>
+        </motion.div>
 
         {/* Contact Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          <a
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+        >
+          <motion.a
             href="mailto:adham@example.com"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-[#1034A6] hover:bg-[#0d2a85] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hard-shadow diagonal-hover hover:bg-royal-blue-dark active:scale-95 transition-all duration-200"
+            whileTap={{ scale: 0.95 }}
           >
             Email
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://github.com/adham-mustafa"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-orange-600 hover:bg-orange-700 transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-orange-600 hard-shadow diagonal-hover hover:bg-orange-700 active:scale-95 transition-all duration-200"
+            whileTap={{ scale: 0.95 }}
           >
             GitHub
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://linkedin.com/in/adham-mustafa"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-[#0A66C2] hover:bg-[#084a8a] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-[#0A66C2] hard-shadow diagonal-hover hover:bg-[#084a8a] active:scale-95 transition-all duration-200"
+            whileTap={{ scale: 0.95 }}
           >
             LinkedIn
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        {/* Optional Contact Form */}
-        <form
+        {/* Contact Form */}
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           onSubmit={(e) => {
             e.preventDefault();
             const form = e.currentTarget as HTMLFormElement;
@@ -49,7 +67,7 @@ export default function Contact() {
             });
             form.reset();
           }}
-          className="bg-background border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm max-w-2xl mx-auto"
+          className="bg-background border border-black rounded-xl p-6 hard-shadow-sm diagonal-hover hover:hard-shadow transition-all duration-200 max-w-2xl mx-auto"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -59,7 +77,7 @@ export default function Contact() {
                 name="name"
                 type="text"
                 required
-                className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
               />
             </div>
             <div>
@@ -69,7 +87,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900/40"
+                className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
               />
             </div>
           </div>
@@ -80,18 +98,24 @@ export default function Contact() {
               name="message"
               rows={5}
               required
-              className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-900/40"
+              className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-3 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
             />
           </div>
           <div className="mt-6 flex justify-center">
-            <button
+            <motion.button
               type="submit"
-              className="px-6 py-3 rounded-xl font-semibold text-white bg-[#1034A6] hover:bg-[#0d2a85] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
+              className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hard-shadow diagonal-hover hover:bg-royal-blue-dark active:scale-95 transition-all duration-200"
+              whileHover={{ 
+                x: -2, 
+                y: -2,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               Send Message
-            </button>
+            </motion.button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

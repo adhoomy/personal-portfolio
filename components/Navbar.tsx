@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,18 +56,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur border-b border-gray-100/40'
-          : 'bg-transparent'
-      }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-black ${
+              isScrolled
+                ? 'bg-background/95 backdrop-blur hard-shadow-sm'
+                : 'bg-transparent'
+            }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-semibold text-foreground hover:text-blue-600 transition-colors"
+            className="text-xl font-semibold text-foreground hover:text-royal-blue transition-colors diagonal-hover"
           >
             Adham Mustafa
           </Link>
@@ -76,39 +77,35 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <Link
+                <motion.button
                   key={link.href}
-                  href={link.href}
-                  scroll={false}
-                  className={`relative transition-colors group ${
-                    isActive
-                      ? 'text-blue-600'
-                      : 'text-foreground hover:text-blue-600'
-                  }`}
-                  onClick={(e) => {
+                  onClick={() => {
                     const url = new URL(link.href, window.location.origin);
                     if (url.pathname === window.location.pathname && url.hash) {
-                      e.preventDefault();
                       const el = document.querySelector(url.hash);
                       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                      window.location.href = link.href;
                     }
                   }}
+                  className={`rounded-md border border-black px-3 py-1 text-sm font-medium transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm ${
+                    isActive
+                      ? 'bg-royal-blue text-white'
+                      : 'text-foreground hover:bg-royal-blue hover:text-white'
+                  }`}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {link.label}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
-                </Link>
+                </motion.button>
               );
             })}
 
             {/* Theme toggle */}
-            <button
+            <motion.button
               aria-label="Toggle dark mode"
-              className="ml-4 rounded-md border border-gray-200 px-3 py-1 text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
+              className="ml-4 rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              whileTap={{ scale: 0.95 }}
             >
               {!mounted ? (
                 <Sun size={16} className="opacity-0" />
@@ -118,12 +115,12 @@ export default function Navbar() {
                 <Moon size={16} />
               )}
               <span className="hidden sm:inline">{mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Dark'}</span>
-            </button>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-blue-600 transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-royal-blue transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -132,37 +129,41 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-100">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden mt-4 py-4 border-t border-gray-100"
+          >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link
+                  <button
                     key={link.href}
-                    href={link.href}
-                    scroll={false}
-                    className={`py-2 transition-colors ${
-                      isActive
-                        ? 'text-blue-600'
-                        : 'text-foreground hover:text-blue-600'
-                    }`}
-                    onClick={(e) => {
+                    onClick={() => {
                       setIsMobileMenuOpen(false);
                       const url = new URL(link.href, window.location.origin);
                       if (url.pathname === window.location.pathname && url.hash) {
-                        e.preventDefault();
                         const el = document.querySelector(url.hash);
                         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      } else {
+                        window.location.href = link.href;
                       }
                     }}
+                    className={`rounded-md border border-black px-3 py-1 text-sm font-medium transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm ${
+                      isActive
+                        ? 'bg-royal-blue text-white'
+                        : 'text-foreground hover:bg-royal-blue hover:text-white'
+                    }`}
                   >
                     {link.label}
-                  </Link>
+                  </button>
                 );
               })}
               <button
                 aria-label="Toggle dark mode"
-                className="mt-2 w-max rounded-md border border-gray-200 px-3 py-1 text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
+                className="mt-2 w-max rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               >
                 {!mounted ? (
@@ -175,7 +176,7 @@ export default function Navbar() {
                 <span>{mounted ? (theme === 'dark' ? 'Light' : 'Dark') : 'Dark'} Mode</span>
               </button>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </nav>

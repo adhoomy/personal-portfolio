@@ -4,6 +4,9 @@
   --background: #ffffff;
   --foreground: #0D0D0D;
   --secondary: #555555;
+  --royal-blue: #1034A6;
+  --royal-blue-light: #4169E1;
+  --royal-blue-dark: #0d2a85;
 }
 
 /* Dark theme variables toggled via [data-theme="dark"] */
@@ -11,12 +14,18 @@
   --background: #0d0d0d;
   --foreground: #ffffff;
   --secondary: #b3b3b3;
+  --royal-blue: #4169E1;
+  --royal-blue-light: #5a7ce8;
+  --royal-blue-dark: #1034A6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
+  --color-royal-blue: var(--royal-blue);
+  --color-royal-blue-light: var(--royal-blue-light);
+  --color-royal-blue-dark: var(--royal-blue-dark);
   --font-sans: var(--font-inter);
 }
 
@@ -29,10 +38,106 @@ body {
 
 /* Smooth transitions for interactive elements */
 * {
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Smooth scroll behavior and anchor offset handling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Hard shadow utilities - using box-shadow approach */
+.hard-shadow {
+  position: relative;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.hard-shadow:hover {
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.9);
+}
+
+.hard-shadow-sm {
+  position: relative;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.hard-shadow-sm:hover {
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+}
+
+.hard-shadow-lg {
+  position: relative;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.hard-shadow-lg:hover {
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Dark mode hard shadows */
+[data-theme="dark"] .hard-shadow:hover {
+  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hard-shadow-sm:hover {
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hard-shadow-lg:hover {
+  box-shadow: 12px 12px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* Diagonal hover effects */
+.diagonal-hover {
+  transition: transform 0.2s ease !important;
+  position: relative;
+}
+
+.diagonal-hover:hover {
+  transform: translate(-2px, -2px) !important;
+}
+
+/* Royal blue utilities */
+.royal-blue {
+  color: var(--royal-blue);
+}
+
+.bg-royal-blue {
+  background-color: var(--royal-blue);
+}
+
+.border-royal-blue {
+  border-color: var(--royal-blue);
+}
+
+.hover\:bg-royal-blue:hover {
+  background-color: var(--royal-blue);
+}
+
+.hover\:text-royal-blue:hover {
+  color: var(--royal-blue);
+}
+
+.focus\:border-royal-blue:focus {
+  border-color: var(--royal-blue);
+}
+
+.focus\:ring-royal-blue:focus {
+  --tw-ring-color: var(--royal-blue);
+}
+
+/* Black border utilities */
+.border-black {
+  border-color: #000000;
+}
+
+.hover\:border-black:hover {
+  border-color: #000000;
+}
+
+.focus\:border-black:focus {
+  border-color: #000000;
 }
