@@ -117,7 +117,7 @@ export default function About() {
         {/* Desktop Timeline */}
         <div className="hidden lg:block">
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 "></div>
             
             <motion.div
               variants={containerVariants}
@@ -166,7 +166,7 @@ export default function About() {
                         {role.tech.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
+                            className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
                           >
                             {tech}
                           </span>
@@ -216,7 +216,7 @@ export default function About() {
                   {role.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
+                      className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
                     >
                       {tech}
                     </span>

@@ -25,7 +25,7 @@ export default function Contact() {
         >
           <motion.a
             href="mailto:adham@example.com"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hard-shadow diagonal-hover hover:bg-royal-blue-dark active:scale-95 transition-all duration-200"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hover:bg-royal-blue-light transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
             whileTap={{ scale: 0.95 }}
           >
             Email
@@ -34,7 +34,7 @@ export default function Contact() {
             href="https://github.com/adham-mustafa"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-orange-600 hard-shadow diagonal-hover hover:bg-orange-700 active:scale-95 transition-all duration-200"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-orange-600 hover:bg-orange-500 transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
             whileTap={{ scale: 0.95 }}
           >
             GitHub
@@ -43,7 +43,7 @@ export default function Contact() {
             href="https://linkedin.com/in/adham-mustafa"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-[#0A66C2] hard-shadow diagonal-hover hover:bg-[#084a8a] active:scale-95 transition-all duration-200"
+            className="px-6 py-3 rounded-xl font-semibold text-white bg-[#0A66C2] hover:bg-[#0077b5] transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
             whileTap={{ scale: 0.95 }}
           >
             LinkedIn
@@ -77,7 +77,7 @@ export default function Contact() {
                 name="name"
                 type="text"
                 required
-                className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
+                className="w-full rounded-xl border border-black bg-white  px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
               />
             </div>
             <div>
@@ -87,7 +87,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
+                className="w-full rounded-xl border border-black bg-white  px-4 py-2 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
               />
             </div>
           </div>
@@ -98,18 +98,13 @@ export default function Contact() {
               name="message"
               rows={5}
               required
-              className="w-full rounded-xl border border-black bg-white dark:bg-gray-900 px-4 py-3 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
+              className="w-full rounded-xl border border-black bg-white  px-4 py-3 focus:outline-none focus:border-royal-blue focus:ring-2 focus:ring-royal-blue/20 transition-all duration-200"
             />
           </div>
           <div className="mt-6 flex justify-center">
             <motion.button
               type="submit"
-              className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hard-shadow diagonal-hover hover:bg-royal-blue-dark active:scale-95 transition-all duration-200"
-              whileHover={{ 
-                x: -2, 
-                y: -2,
-                transition: { duration: 0.2 }
-              }}
+              className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hover:bg-royal-blue-light transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
               whileTap={{ scale: 0.95 }}
             >
               Send Message

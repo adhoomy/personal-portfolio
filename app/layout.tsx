@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="light" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Adham Mustafa – Software Engineer</title>
         <meta name="description" content="Portfolio of Adham Mustafa, showcasing software engineering projects, skills, and experience." />

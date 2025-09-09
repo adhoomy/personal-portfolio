@@ -85,7 +85,7 @@ export default function Home() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-royal-blue text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-dark active:scale-95 border border-black"
+              className="px-6 py-3 rounded-xl bg-royal-blue text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-light active:scale-95 border border-black"
               whileTap={{ scale: 0.95 }}
             >
               Resume
@@ -94,7 +94,7 @@ export default function Home() {
               href="https://github.com/adham-mustafa"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-orange-600 text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-700 active:scale-95 border border-black"
+              className="px-6 py-3 rounded-xl bg-orange-600 text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-500 active:scale-95 border border-black"
               whileTap={{ scale: 0.95 }}
             >
               GitHub
@@ -103,7 +103,7 @@ export default function Home() {
               href="https://linkedin.com/in/adham-mustafa"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-[#0A66C2] text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-[#084a8a] active:scale-95 border border-black"
+              className="px-6 py-3 rounded-xl bg-[#0A66C2] text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-[#0077b5] active:scale-95 border border-black"
               whileTap={{ scale: 0.95 }}
             >
               LinkedIn
@@ -165,7 +165,7 @@ export default function Home() {
                     {role.tech.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
+                        className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
                       >
                         {tech}
                       </span>
@@ -232,7 +232,7 @@ export default function Home() {
                     {proj.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
+                        className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200"
                       >
                         {t}
                       </span>
@@ -244,7 +244,7 @@ export default function Home() {
                       href={proj.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:bg-orange-700 active:scale-95"
+                      className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:bg-orange-500 active:scale-95 border border-black"
                       whileTap={{ scale: 0.95 }}
                     >
                       GitHub
@@ -253,7 +253,7 @@ export default function Home() {
                       href={proj.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-royal-blue text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:bg-royal-blue-dark active:scale-95"
+                      className="px-4 py-2 rounded-xl bg-royal-blue text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:bg-royal-blue-light active:scale-95 border border-black"
                       whileTap={{ scale: 0.95 }}
                     >
                       Live Demo

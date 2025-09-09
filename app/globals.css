@@ -9,15 +9,6 @@
   --royal-blue-dark: #0d2a85;
 }
 
-/* Dark theme variables toggled via [data-theme="dark"] */
-[data-theme="dark"] {
-  --background: #0d0d0d;
-  --foreground: #ffffff;
-  --secondary: #b3b3b3;
-  --royal-blue: #4169E1;
-  --royal-blue-light: #5a7ce8;
-  --royal-blue-dark: #1034A6;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -38,7 +29,7 @@ body {
 
 /* Smooth transitions for interactive elements */
 * {
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Smooth scroll behavior and anchor offset handling */
@@ -77,18 +68,6 @@ html {
   box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.9);
 }
 
-/* Dark mode hard shadows */
-[data-theme="dark"] .hard-shadow:hover {
-  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .hard-shadow-sm:hover {
-  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .hard-shadow-lg:hover {
-  box-shadow: 12px 12px 0px rgba(255, 255, 255, 0.1);
-}
 
 /* Diagonal hover effects */
 .diagonal-hover {

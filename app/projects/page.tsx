@@ -11,7 +11,7 @@ export default function Projects() {
   const filterCategories = ["All", "Web", "Backend", "AI"];
 
   const getTechColor = (tech: string) => {
-    return 'px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200';
+    return 'px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200';
   };
 
   const filteredProjects = projects.filter((project) => {
@@ -131,7 +131,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-700 border border-black"
+                  className="px-4 py-2 rounded-xl bg-orange-600 text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-500 border border-black"
                   whileTap={{ scale: 0.95 }}
                 >
                   GitHub
@@ -140,7 +140,7 @@ export default function Projects() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-royal-blue text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-dark border border-black"
+                  className="px-4 py-2 rounded-xl bg-royal-blue text-white text-sm font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-light border border-black"
                   whileTap={{ scale: 0.95 }}
                 >
                   Live Demo
