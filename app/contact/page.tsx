@@ -24,14 +24,7 @@ export default function Contact() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
           <motion.a
-            href="mailto:adham@example.com"
-            className="px-6 py-3 rounded-xl font-semibold text-white bg-royal-blue hover:bg-royal-blue-light transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
-            whileTap={{ scale: 0.95 }}
-          >
-            Email
-          </motion.a>
-          <motion.a
-            href="https://github.com/adham-mustafa"
+            href="https://github.com/adhoomy"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl font-semibold text-white bg-orange-600 hover:bg-orange-500 transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"
@@ -40,7 +33,7 @@ export default function Contact() {
             GitHub
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/adham-mustafa"
+            href="https://linkedin.com/in/adham-mustafa-"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl font-semibold text-white bg-[#0A66C2] hover:bg-[#0077b5] transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow active:scale-95 border border-black"

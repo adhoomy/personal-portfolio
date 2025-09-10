@@ -13,26 +13,25 @@ export default function Home() {
     Languages: [
       { name: "Python", icon: "🐍" },
       { name: "C++", icon: "⚡" },
-      { name: "Java", icon: "☕" },
-      { name: "TypeScript", icon: "📘" },
+      { name: "HTML", icon: "🌐" },
+      { name: "CSS", icon: "🎨" },
       { name: "JavaScript", icon: "🟨" },
-    ],
-    Frameworks: [
-      { name: "Next.js", icon: "▲" },
       { name: "React", icon: "⚛️" },
-      { name: "Tailwind", icon: "🎨" },
       { name: "Node.js", icon: "🟢" },
+      { name: "Express", icon: "🚀" },
+      { name: "Java", icon: "☕" },
     ],
-    Tools: [
+    "Tools/Technologies": [
+      { name: "Tkinter", icon: "🖥️" },
+      { name: "Pandas", icon: "🐼" },
+      { name: "GitHub", icon: "🐙" },
       { name: "Git", icon: "📦" },
-      { name: "Docker", icon: "🐳" },
-      { name: "Postman", icon: "📮" },
-      { name: "VS Code", icon: "💻" },
-    ],
-    Cloud: [
-      { name: "AWS", icon: "☁️" },
-      { name: "Azure", icon: "🔵" },
+      { name: "Firebase", icon: "🔥" },
+      { name: "Next.js", icon: "▲" },
       { name: "Vercel", icon: "▲" },
+      { name: "Bootstrap", icon: "🎨" },
+      { name: "Tailwind", icon: "🎨" },
+      { name: "MongoDB", icon: "🍃" },
     ],
   };
 
@@ -82,16 +81,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-royal-blue text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-royal-blue-light active:scale-95 border border-black"
-              whileTap={{ scale: 0.95 }}
-            >
-              Resume
-            </motion.a>
-            <motion.a
-              href="https://github.com/adham-mustafa"
+              href="https://github.com/adhoomy"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-orange-600 text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-orange-500 active:scale-95 border border-black"
@@ -100,7 +90,7 @@ export default function Home() {
               GitHub
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/adham-mustafa"
+              href="https://linkedin.com/in/adham-mustafa-"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-[#0A66C2] text-white font-medium transition-all duration-200 hard-shadow-sm diagonal-hover hover:hard-shadow hover:bg-[#0077b5] active:scale-95 border border-black"

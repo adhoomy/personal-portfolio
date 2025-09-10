@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center space-x-4">
             <a
-              href="https://github.com/adham-mustafa"
+              href="https://github.com/adhoomy"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/adham-mustafa"
+              href="https://linkedin.com/in/adham-mustafa-"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
@@ -31,14 +31,6 @@ export default function Footer() {
             >
               <Linkedin size={16} />
               <span className="hidden sm:inline">LinkedIn</span>
-            </a>
-            <a
-              href="mailto:adham@example.com"
-              className="rounded-md border border-black px-3 py-1 text-sm text-foreground hover:bg-royal-blue hover:text-white transition-colors flex items-center gap-2 diagonal-hover hard-shadow-sm"
-              aria-label="Email"
-            >
-              <Mail size={16} />
-              <span className="hidden sm:inline">Email</span>
             </a>
           </div>
         </div>

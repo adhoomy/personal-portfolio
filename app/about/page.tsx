@@ -9,32 +9,25 @@ export default function About() {
     Languages: [
       { name: "Python", icon: "🐍" },
       { name: "C++", icon: "⚡" },
-      { name: "Java", icon: "☕" },
-      { name: "TypeScript", icon: "📘" },
+      { name: "HTML", icon: "🌐" },
+      { name: "CSS", icon: "🎨" },
       { name: "JavaScript", icon: "🟨" },
-      { name: "Go", icon: "🐹" },
-    ],
-    Frameworks: [
-      { name: "Next.js", icon: "▲" },
       { name: "React", icon: "⚛️" },
-      { name: "Tailwind", icon: "🎨" },
       { name: "Node.js", icon: "🟢" },
       { name: "Express", icon: "🚀" },
-      { name: "Django", icon: "🐍" },
+      { name: "Java", icon: "☕" },
     ],
-    Tools: [
+    "Tools/Technologies": [
+      { name: "Tkinter", icon: "🖥️" },
+      { name: "Pandas", icon: "🐼" },
+      { name: "GitHub", icon: "🐙" },
       { name: "Git", icon: "📦" },
-      { name: "Docker", icon: "🐳" },
-      { name: "Postman", icon: "📮" },
-      { name: "VS Code", icon: "💻" },
-      { name: "Figma", icon: "🎨" },
-      { name: "Linux", icon: "🐧" },
-    ],
-    Cloud: [
-      { name: "AWS", icon: "☁️" },
-      { name: "Azure", icon: "🔵" },
+      { name: "Firebase", icon: "🔥" },
+      { name: "Next.js", icon: "▲" },
       { name: "Vercel", icon: "▲" },
-      { name: "Netlify", icon: "🌐" },
+      { name: "Bootstrap", icon: "🎨" },
+      { name: "Tailwind", icon: "🎨" },
+      { name: "MongoDB", icon: "🍃" },
     ],
   };
 
@@ -54,7 +47,7 @@ export default function About() {
   return (
     <div className="py-20">
       {/* About Me Section */}
-      <section className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <section className="grid lg:grid-cols-2 gap-8 items-center mb-20">
         <motion.div
           initial={{ opacity: 0, x: -20, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
@@ -66,15 +59,19 @@ export default function About() {
           </h1>
           <div className="space-y-4 text-lg leading-relaxed">
             <p className="text-secondary">
-              I'm a passionate software engineer with a focus on building scalable web applications 
-              and exploring the intersection of AI and traditional software development. My journey 
-              spans from cybersecurity research to full-stack development, always driven by curiosity 
-              and a desire to solve complex problems.
+              I'm a passionate software engineer with a focus on building modern web applications 
+              and full-stack solutions. My journey spans from front-end development to full-stack 
+              engineering, always driven by curiosity and a desire to create impactful digital experiences.
             </p>
             <p className="text-secondary">
-              When I'm not coding, you'll find me diving deep into machine learning algorithms, 
-              contributing to open-source projects, or exploring new technologies that push the 
-              boundaries of what's possible in software engineering.
+              With experience in React, Next.js, Node.js, and MongoDB, I specialize in creating 
+              responsive, scalable applications. I've worked on projects ranging from e-commerce 
+              marketplaces to language learning platforms, always focusing on clean code and 
+              user-centered design.
+            </p>
+            <p className="text-secondary">
+              When I'm not coding, you'll find me exploring new technologies or working on 
+              personal projects that challenge me to grow as a developer.
             </p>
           </div>
         </motion.div>

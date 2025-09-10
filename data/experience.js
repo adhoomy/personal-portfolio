@@ -1,34 +1,26 @@
 export const experience = [
   {
     id: 1,
-    company: "Air Force Research Labs",
-    role: "Cybersecurity Intern",
-    dates: "July 2024 – Aug 2024",
-    description: "Implemented Retrieval-Augmented Generation in a two-agent conversational AI setup, improving memory utilization by 30%.",
-    tech: ["Python", "Ollama", "Mistral", "RAG", "AI/ML"]
+    company: "Expoline Consulting",
+    role: "Full Stack Engineer Intern",
+    dates: "Jun 2025 – Aug 2025",
+    description: "Built company website with HTML, Tailwind, Node.js, Express, and SheetyAPI. Developed React/Next.js + MongoDB internal portal to centralize workflows. Increased team efficiency by streamlining communication across departments.",
+    tech: ["HTML", "Tailwind", "Node.js", "Express", "React", "Next.js", "MongoDB", "SheetyAPI"]
   },
   {
     id: 2,
-    company: "Tech Startup Inc",
-    role: "Full Stack Developer Intern",
-    dates: "May 2024 – July 2024",
-    description: "Developed and maintained web applications using modern frameworks, contributing to a 40% increase in user engagement.",
-    tech: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"]
+    company: "The Cove Development",
+    role: "Full Stack Engineer Intern",
+    dates: "Mar 2025 – Jun 2025",
+    description: "Integrated APIs with JWT auth to automate form submissions. Improved SEO/metadata, optimizing performance and visibility. Built responsive HTML/CSS interfaces, delivered 3 client websites.",
+    tech: ["JavaScript", "JWT", "API Integration", "HTML", "CSS", "SEO", "Performance Optimization"]
   },
   {
     id: 3,
-    company: "University Research Lab",
-    role: "Research Assistant",
-    dates: "Jan 2024 – May 2024",
-    description: "Conducted research on machine learning algorithms for data analysis, resulting in 2 published papers.",
-    tech: ["Python", "TensorFlow", "PyTorch", "Jupyter", "Git"]
-  },
-  {
-    id: 4,
-    company: "Local Software Company",
-    role: "Software Development Intern",
-    dates: "June 2023 – Aug 2023",
-    description: "Built responsive web applications and mobile interfaces, improving user experience across multiple platforms.",
-    tech: ["JavaScript", "React Native", "Express.js", "MongoDB", "REST APIs"]
+    company: "World Tech VI",
+    role: "Front End Engineer",
+    dates: "Apr 2024 – May 2024",
+    description: "Engineered high-traffic React website, boosting revenue $60,000 annually. Revamped UI, increasing monthly interactions to 1,800+. Deployed on Vercel with scaling and real-time stats.",
+    tech: ["React", "JavaScript", "Vercel", "UI/UX", "Performance", "Analytics"]
   }
 ];

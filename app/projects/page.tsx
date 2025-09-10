@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filterCategories = ["All", "Web", "Backend", "AI"];
+  const filterCategories = ["All", "Frontend", "Backend", "Full-Stack"];
 
   const getTechColor = (tech: string) => {
     return 'px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-royal-blue hover:text-white transition-colors duration-200';
@@ -16,9 +16,21 @@ export default function Projects() {
 
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === "All") return true;
-    return project.tech.some((tech) =>
-      tech.toLowerCase().includes(activeFilter.toLowerCase())
-    );
+    
+    const frontendTechs = ["React", "Next.js", "HTML", "CSS", "JavaScript", "Tailwind", "Bootstrap", "Framer Motion", "shadcn/ui"];
+    const backendTechs = ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "REST API", "API Integration"];
+    const fullStackTechs = ["Next.js", "MongoDB", "NextAuth.js", "Stripe", "Cloudinary", "Vercel"];
+    
+    switch (activeFilter) {
+      case "Frontend":
+        return project.tech.some(tech => frontendTechs.includes(tech));
+      case "Backend":
+        return project.tech.some(tech => backendTechs.includes(tech));
+      case "Full-Stack":
+        return project.tech.some(tech => fullStackTechs.includes(tech));
+      default:
+        return true;
+    }
   });
 
   const containerVariants = {
@@ -64,9 +76,9 @@ export default function Projects() {
             
             switch (cat) {
               case "All": return "bg-royal-blue text-white";
-              case "Web": return "bg-royal-blue text-white";
+              case "Frontend": return "bg-royal-blue text-white";
               case "Backend": return "bg-royal-blue text-white";
-              case "AI": return "bg-royal-blue text-white";
+              case "Full-Stack": return "bg-royal-blue text-white";
               default: return "bg-royal-blue text-white";
             }
           };
