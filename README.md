@@ -33,13 +33,14 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+<!-- Contact form removed -->
+
 ## Project Structure
 
 ```
 personal-portfolio/
 ├── app/
 │   ├── about/page.tsx
-│   ├── contact/page.tsx
 │   ├── projects/page.tsx
 │   ├── globals.css
 │   ├── layout.tsx
@@ -63,5 +64,4 @@ personal-portfolio/
 - Add hero section to home page
 - Implement project showcase
 - Add about page content
-- Create contact form
 - Add animations and micro-interactions
